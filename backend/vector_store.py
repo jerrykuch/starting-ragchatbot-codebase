@@ -144,15 +144,15 @@ class VectorStore:
             lessons_metadata.append({
                 "lesson_number": lesson.lesson_number,
                 "lesson_title": lesson.title,
-                "lesson_link": lesson.lesson_link
+                "lesson_link": lesson.lesson_link or ""
             })
         
         self.course_catalog.add(
             documents=[course_text],
             metadatas=[{
                 "title": course.title,
-                "instructor": course.instructor,
-                "course_link": course.course_link,
+                "instructor": course.instructor or "Unknown",
+                "course_link": course.course_link or "",
                 "lessons_json": json.dumps(lessons_metadata),  # Serialize as JSON string
                 "lesson_count": len(course.lessons)
             }],

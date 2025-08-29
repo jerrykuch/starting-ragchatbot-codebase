@@ -142,7 +142,7 @@ class DocumentProcessor:
         course = Course(
             title=course_title,
             course_link=course_link,
-            instructor=instructor_name if instructor_name != "Unknown" else None
+            instructor=instructor_name if instructor_name != "Unknown" else "Unknown"
         )
         
         # Process lessons and create chunks
